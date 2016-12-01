@@ -1,6 +1,5 @@
 package javaapplication8;
 
-import java.awt.Dialog;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,7 +16,6 @@ public class P4Dialog extends JDialog {
     private JButton okBT = new JButton("Ok");
     private JButton cancelBT = new JButton("Cancel");
     private ButtonGroup bg = new ButtonGroup();
-    //private static final long serialVersionUID = 1L;
     
     public P4Dialog(final P4Frame parent) {
         super(parent, true);
@@ -39,9 +37,9 @@ public class P4Dialog extends JDialog {
         add(okBT);
         add(cancelBT);
         this.setDefaultCloseOperation(HIDE_ON_CLOSE);
-        setVisible(true);
         okBT.addActionListener(new OKHandler());
         cancelBT.addActionListener(new CancelHandler());
+        setVisible(true);
     }
 
     private class OKHandler implements ActionListener {
@@ -62,6 +60,7 @@ public class P4Dialog extends JDialog {
     
     private class CancelHandler implements ActionListener{
         public void actionPerformed(ActionEvent e){
+            System.out.println("cancel clicked");
             setVisible(false);
         }
     }
