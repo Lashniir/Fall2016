@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package javaapplication8;
 
 import java.awt.event.KeyEvent;
@@ -16,10 +11,6 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
-/**
- *
- * @author Lashniir
- */
 public class P4Frame extends JFrame {
     
     JMenuBar menuBar = new JMenuBar();

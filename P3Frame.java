@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package javaapplication8;
 
 import java.awt.BorderLayout;
@@ -13,10 +8,6 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-/**
- *
- * @author Lashniir
- */
 public class P3Frame extends JFrame {
     
     static JButton submitBT = new JButton("Submit");

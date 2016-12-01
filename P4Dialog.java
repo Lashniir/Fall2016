@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package javaapplication8;
 
 import java.awt.Dialog;
@@ -14,10 +9,6 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JRadioButton;
 
-/**
- *
- * @author Lashniir
- */
 public class P4Dialog extends JDialog {
 
     private JRadioButton redRB = new JRadioButton("Red");
@@ -57,17 +48,14 @@ public class P4Dialog extends JDialog {
 
         public void actionPerformed(ActionEvent e) {
             if (redRB.isSelected()) {
-                P4Dialog.this.setModalityType(Dialog.ModalityType.MODELESS);
                 setVisible(false);
-                //P4Dialog.this.setModalityType(Dialog.ModalityType.DOCUMENT_MODAL); 
+                P4Frame.mySetBGColor(0);
             } else if (greenRB.isSelected()) {
-                P4Dialog.this.setModalityType(Dialog.ModalityType.MODELESS);
                 setVisible(false);
-                //P4Dialog.this.setModalityType(Dialog.ModalityType.DOCUMENT_MODAL);
+                P4Frame.mySetBGColor(1);
             } else if (blueRB.isSelected()) {
-                P4Dialog.this.setModalityType(Dialog.ModalityType.MODELESS);
                 setVisible(false);
-                //P4Dialog.this.setModalityType(Dialog.ModalityType.DOCUMENT_MODAL);
+                P4Frame.mySetBGColor(2);
             }
         }
     }
