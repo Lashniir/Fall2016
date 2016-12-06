@@ -1,3 +1,5 @@
+package javaapplication8;
+
 import java.awt.GridLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.JCheckBox;
@@ -32,7 +34,7 @@ public class P3Panel extends JPanel{
     private static JTextField lastNameTF = new JTextField();
     private static JComboBox deptCB = new JComboBox(depts);
     private static JComboBox yearCB = new JComboBox(years);
-    private JRadioButton aARB = new JRadioButton("AA");
+    private static JRadioButton aARB = new JRadioButton("AA");
     private JRadioButton bARB = new JRadioButton("BA");
     private JRadioButton bSRB = new JRadioButton("BS");
     private static JRadioButton dummyRB = new JRadioButton();
@@ -45,7 +47,6 @@ public class P3Panel extends JPanel{
     private JPanel panel3 = new JPanel();
     private JPanel panel4 = new JPanel();
     private JPanel panel5 = new JPanel();
-   // private JPanel rbPanel = new JPanel();
     
     public P3Panel(){
         this.setLayout(new GridLayout(5,1));
@@ -117,7 +118,7 @@ public class P3Panel extends JPanel{
 	deptCB.requestFocus();
     }
     public static void focusDegree(){
-	degreeLB.requestFocus();
+	aARB.requestFocus();
     }
     public static void focusYear(){
 	yearCB.requestFocus();

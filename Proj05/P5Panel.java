@@ -1,5 +1,3 @@
-//package javaapplication8;
-
 import java.awt.GridLayout;
 import java.io.PrintWriter;
 import javax.swing.ButtonGroup;
@@ -22,8 +20,8 @@ public class P5Panel extends JPanel{
     private static String[] depts = {"Select One","Art","Biology","Buisness",
                 "Chemistry","CIS","Economics","History","HPEES","Mathematics",
                 "Political Science","Undecided"};
-    private static String[] years = {"Select One","1999","2000","2001","2002","2003",
-            "2004","2005","2006"};
+    private static String[] years = {"Select One","1999","2000","2001","2002",
+        "2003", "2004","2005","2006"};
     
     private JLabel firstNameLB = new JLabel("First Name: ");
     private JLabel lastNameLB = new JLabel("Last Name: ");
@@ -117,7 +115,7 @@ public class P5Panel extends JPanel{
 	deptCB.requestFocus();
     }
     public static void focusDegree(){
-	degreeLB.requestFocus();
+	aARB.requestFocus();
     }
     public static void focusYear(){
 	yearCB.requestFocus();

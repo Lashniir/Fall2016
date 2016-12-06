@@ -1,11 +1,8 @@
-//package javaapplication8;
-
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
@@ -71,11 +68,13 @@ public class P5Frame extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             int result = P5Panel.p5ValidateUI();
-            if (result == P3Panel.UI_VALID) {
+            if (result == P5Panel.UI_VALID) {
                 P5Panel.P5Print(out);
+                out.flush();
             } else if (result == P5Panel.UI_INVALID_NO_FIRST_NAME) {
                 JOptionPane.showMessageDialog(null,
-                        "You did not give me your first name. Please try again.");
+                        "You did not give me your first name. "
+                                + "Please try again.");
                 P5Panel.focusFirst();
             } else if (result == P5Panel.UI_INVALID_NO_LAST_NAME) {
                 JOptionPane.showMessageDialog(null,
@@ -83,15 +82,18 @@ public class P5Frame extends JFrame {
                 P5Panel.focusLast();
             } else if (result == P5Panel.UI_INVALID_NO_MAJOR) {
                 JOptionPane.showMessageDialog(null,
-                        "You did not select a major. I know it can be hard, but please try again.");
+                        "You did not select a major. I know it can be hard, "
+                                + "but please try again.");
                 P5Panel.focusDept();
             } else if (result == P5Panel.UI_INVALID_NO_DEGREE) {
                 JOptionPane.showMessageDialog(null,
-                        "You did not select a degree. Please choose from one of the options.");
+                        "You did not select a degree. Please choose from one "
+                                + "of the options.");
                 P5Panel.focusDegree();
             } else if (result == P5Panel.UI_INVALID_NO_YEAR) {
                 JOptionPane.showMessageDialog(null,
-                        "You did not selec a year. Please choose one from the options.");
+                        "You did not selec a year. Please choose one from "
+                                + "the options.");
                 P5Panel.focusYear();
             }
         }
@@ -113,12 +115,12 @@ public class P5Frame extends JFrame {
             File file = chooser.getSelectedFile();
             try {
                 if (file.exists()) {
-                    int n = JOptionPane.showConfirmDialog(P5Frame.this, "File already exists.\n"
-                            + "Would you like to continue?", "File Already Exists",
+                    int result = JOptionPane.showConfirmDialog(P5Frame.this, 
+                            "File already exists.\n"
+                            + "Would you like to continue?", 
+                            "File Already Exists",
                             JOptionPane.YES_NO_OPTION);
-                    if (n == 1) {
-                        return;
-                    } else if (n == 0) {
+                    if (result == JFileChooser.APPROVE_OPTION) {
                         out = new PrintWriter(file);
                         submitBT.setEnabled(true);
                         clearBT.setEnabled(true);
@@ -134,9 +136,9 @@ public class P5Frame extends JFrame {
                     mOpen.setEnabled(false);
                     P5Frame.this.setVisible(true);
                 }
-            } catch (FileNotFoundException ex) {
+            } catch (Exception ex) {
                 JOptionPane.showMessageDialog(P5Frame.this,
-                        "File Not Found.",
+                        "No File Selected.",
                         "Error",
                         JOptionPane.ERROR_MESSAGE);
             }
