@@ -1,5 +1,3 @@
-package javaapplication8;
-
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -10,23 +8,17 @@ import javax.swing.JPanel;
 
 public class P6Frame extends JFrame {
     
-    private BlinkingLabel label1 = new BlinkingLabel("Label 1",100);
-    private BlinkingLabel label2 = new BlinkingLabel("Label 2",300);
-    private BlinkingLabel label3 = new BlinkingLabel("Label 3",600);
+    private BlinkingLabel label1 = new BlinkingLabel("Black and blue, 200 delay",200,Color.blue);
+    private BlinkingLabel label2 = new BlinkingLabel("Black and yellow, 300 delay",300,Color.yellow);
+    private BlinkingLabel label3 = new BlinkingLabel("Black and orange, 600 delay",600,Color.orange);
     
     public P6Frame(){
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         
-        label1.setBackground(Color.red);
-        label1.setForeground(Color.blue);
         label1.setOpaque(true);
-        label2.setBackground(Color.red);
-        label2.setForeground(Color.blue);
         label2.setOpaque(true);
-        label3.setBackground(Color.red);
-        label3.setForeground(Color.blue);
         label3.setOpaque(true);
         
         panel.add(Box.createRigidArea(new Dimension(100,100)));
@@ -39,7 +31,7 @@ public class P6Frame extends JFrame {
     
     public static void main(String[] args){
         P6Frame frame = new P6Frame();
-        frame.setSize(500, 500);
+        frame.setSize(300, 250);
         frame.setVisible(true);
     }
 }

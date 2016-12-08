@@ -1,5 +1,3 @@
-package javaapplication8;
-
 import java.awt.Color;
 import javax.swing.JLabel;
 
@@ -8,16 +6,16 @@ public class BlinkingLabel extends JLabel{
     private Color fg;
     private int delay = 300;
     
-    public BlinkingLabel(String str, int delay){
+    public BlinkingLabel(String str, int delay, Color c){
         super(str);
         this.delay=delay;
-        bg = this.getBackground();
+        bg = c;
         fg = this.getForeground();
         new Timer().start();
     }
     
     public void setForeground(Color c){
-        fg=c;
+        //fg=c;
         super.setForeground(c);
     }
     
@@ -26,9 +24,9 @@ public class BlinkingLabel extends JLabel{
         public void run(){
             try{
                 while(true){
-                    BlinkingLabel.super.setForeground(fg);
+                    BlinkingLabel.super.setForeground(fg);//fg
                     sleep(delay);
-                    BlinkingLabel.super.setBackground(fg);
+                    BlinkingLabel.super.setForeground(bg);//bg
                     sleep(delay);
                     //System.out.println("while loop");
                 }
