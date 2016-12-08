@@ -11,8 +11,8 @@ public class BlinkingLabel extends JLabel{
     public BlinkingLabel(String str, int delay){
         super(str);
         this.delay=delay;
-        bg = getBackground();
-        fg = getForeground();
+        bg = this.getBackground();
+        fg = this.getForeground();
         new Timer().start();
     }
     
@@ -22,6 +22,7 @@ public class BlinkingLabel extends JLabel{
     }
     
     public class Timer extends Thread{
+        @Override
         public void run(){
             try{
                 while(true){
@@ -29,7 +30,7 @@ public class BlinkingLabel extends JLabel{
                     sleep(delay);
                     BlinkingLabel.super.setBackground(fg);
                     sleep(delay);
-                    System.out.println("while loop");
+                    //System.out.println("while loop");
                 }
             }
             catch(Exception ex){
