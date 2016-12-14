@@ -20,9 +20,9 @@ public class P8Panel extends JPanel {
     private static String[] depts = {"Select One", "Art", "Biology", "Buisness",
         "Chemistry", "CIS", "Economics", "History", "Kinesiology",
         "Mathematics", "Political Science"};
-    private static String[] years = {"Select One", "1999", "2000", "2001", "2002",
-        "2003", "2004", "2005", "2006,2007", "2008", "2009", "2010", "2011", "2012",
-        "2013", "2014", "2015", "2016", "2017"};
+    private static String[] years = {"Select One", "1999", "2000", "2001", 
+        "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010",
+        "2011", "2012", "2013", "2014", "2015", "2016", "2017"};
     private JLabel firstNameLB = new JLabel("First Name: ");
     private JLabel lastNameLB = new JLabel("Last Name: ");
     private JLabel deptLB = new JLabel("Major Dept: ");

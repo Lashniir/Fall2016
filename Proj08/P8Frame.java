@@ -71,13 +71,14 @@ public class P8Frame extends JFrame {
                 if (dbDial.getOK() == true) {
                     try {
                         Class.forName("org.gjt.mm.mysql.Driver");
-                        String dbconn = "jdbc:mysql://" + dbDial.getHostName() + ":3300/"
-                                + dbDial.getDBName();
+                        String dbconn = "jdbc:mysql://" + dbDial.getHostName()
+                                + ":3300/" + dbDial.getDBName();
                         Connection conn
-                                = DriverManager.getConnection(dbconn, dbDial.getUsername(),
+                                = DriverManager.getConnection(dbconn, 
+                                        dbDial.getUsername(),
                                         dbDial.getPassword());
                         Statement stmt = conn.createStatement();
-                        String query1 = "select * from " + dbDial.getTableName();
+                        String query1 = "select * from "+dbDial.getTableName();
                         ResultSet rset = stmt.executeQuery(query1);
                         openMI.setEnabled(false);
                         closMI.setEnabled(true);
@@ -102,9 +103,6 @@ public class P8Frame extends JFrame {
                                         prevBT.setEnabled(true);
                                         nextBT.setEnabled(true);
                                         rset.previous();
-                                        for (int i = 0; i < record.length; i++) {
-
-                                        }
                                         record[0] = rset.getString(3);
                                         record[1] = rset.getString(2);
                                         record[2] = rset.getString(4);
