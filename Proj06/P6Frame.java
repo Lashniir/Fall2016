@@ -8,9 +8,12 @@ import javax.swing.JPanel;
 
 public class P6Frame extends JFrame {
     
-    private BlinkingLabel label1 = new BlinkingLabel("Black and blue, 200 delay",200,Color.blue);
-    private BlinkingLabel label2 = new BlinkingLabel("Black and yellow, 300 delay",300,Color.yellow);
-    private BlinkingLabel label3 = new BlinkingLabel("Black and orange, 600 delay",600,Color.orange);
+    private BlinkingLabel label1 = new BlinkingLabel("Black and blue, "
+            + "200 delay",200,Color.blue);
+    private BlinkingLabel label2 = new BlinkingLabel("Black and yellow, "
+            + "300 delay",300,Color.yellow);
+    private BlinkingLabel label3 = new BlinkingLabel("Black and orange, "
+            + "600 delay",600,Color.orange);
     
     public P6Frame(){
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);

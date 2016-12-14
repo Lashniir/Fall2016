@@ -26,11 +26,11 @@ public class DBDialog extends JDialog {
 
     JPanel mainPanel = new JPanel();
     mainPanel.setLayout(new GridLayout(5,2));
-    hostName = new JTextField("198.252.11.102",30);
-    dbName = new JTextField("cm335u00",20);
+    hostName = new JTextField("",30);
+    dbName = new JTextField("",20);
     tableName = new JTextField("student",20);
-    username = new JTextField("cm335u00",20);
-    password = new JPasswordField("kansas",20);
+    username = new JTextField("",20);
+    password = new JPasswordField("",20);
     mainPanel.add(new JLabel("Host Name/IP:"));
     mainPanel.add(hostName);
     mainPanel.add(new JLabel("Database Name:"));
