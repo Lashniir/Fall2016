@@ -1,12 +1,7 @@
-package javaapplication8;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-/*
-*@author Jess Wilson
-* Provided DBDialog class
-* 12-6-16
-*/
+
 public class DBDialog extends JDialog {
   private JTextField hostName;
   private JTextField dbName;
@@ -17,16 +12,25 @@ public class DBDialog extends JDialog {
   private JButton cancelButton;
   private boolean ok;
   
-  public DBDialog(JFrame parent){
+  /*
+  public static void main(String[] args){
+      
+      DBDialog dialog = new DBDialog(new JFrame());
+      dialog.setVisible(true);  
+  }
+  */
+  
+  public DBDialog(JFrame parent)
+  {
     super(parent,"Database Information",true);
 
     JPanel mainPanel = new JPanel();
     mainPanel.setLayout(new GridLayout(5,2));
-    hostName = new JTextField("",30);
-    dbName = new JTextField("",20);
+    hostName = new JTextField("198.252.11.102",30);
+    dbName = new JTextField("cm335u00",20);
     tableName = new JTextField("student",20);
-    username = new JTextField("",20);
-    password = new JPasswordField("",20);
+    username = new JTextField("cm335u00",20);
+    password = new JPasswordField("kansas",20);
     mainPanel.add(new JLabel("Host Name/IP:"));
     mainPanel.add(hostName);
     mainPanel.add(new JLabel("Database Name:"));
@@ -41,7 +45,8 @@ public class DBDialog extends JDialog {
     
     JPanel buttonPanel = new JPanel();
     okButton = new JButton("OK");
-    okButton.addActionListener(new ActionListener(){
+    okButton.addActionListener(new ActionListener() 
+      {
         public void actionPerformed(ActionEvent e) 
         {
           ok = true;
@@ -51,8 +56,10 @@ public class DBDialog extends JDialog {
     );
     buttonPanel.add(okButton);
     cancelButton = new JButton("Cancel");
-    cancelButton.addActionListener(new ActionListener(){
-        public void actionPerformed(ActionEvent e){
+    cancelButton.addActionListener(new ActionListener() 
+      {
+        public void actionPerformed(ActionEvent e) 
+        {
           ok = false;
           setVisible(false);
         }
@@ -62,22 +69,34 @@ public class DBDialog extends JDialog {
     add(buttonPanel,BorderLayout.SOUTH);
     setSize(300,200);
   } 
-  public String getHostName(){
+  
+  public String getHostName()
+  {
     return hostName.getText();
   }
-  public String getDBName(){
+
+  public String getDBName()
+  {
     return dbName.getText();
   }
-  public String getTableName(){
+
+  public String getTableName()
+  {
     return tableName.getText();
   }
-  public String getUsername(){
+
+  public String getUsername()
+  {
     return username.getText();
   }
-  public String getPassword(){
+  
+  public String getPassword()
+  {
     return new String(password.getPassword());
   }
-  public boolean getOK(){
+
+  public boolean getOK()
+  {
     return ok;
   }
-} 
+}

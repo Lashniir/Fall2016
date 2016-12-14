@@ -1,13 +1,8 @@
-package javaapplication8;
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 import java.sql.*;
-/**
- *@author Jess Wilson
- * Project 7 Frame Class - Main
- * 12-6-16
- */
+
 public class P7Frame extends JFrame{
     private static P7Panel dataPanel = new P7Panel();
     private static JButton previous = new JButton("<-");
